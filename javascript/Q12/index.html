@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contagem de Palavras</title>
+</head>
+<body>
+  <h1>Contagem de Palavras</h1>
+  <label for="texto">Digite um texto:</label>
+  <textarea id="texto"></textarea>
+  <button onclick="contarPalavras()">Contar Palavras</button>
+
+  <script>
+    function contarPalavras() {
+      let texto = document.getElementById('texto').value;
+      let palavras = texto.split(' ');
+      let contagem = {};
+
+      for (let i = 0; i < palavras.length; i++) {
+        let palavra = palavras[i];
+
+        if (contagem[palavra]) {
+          contagem[palavra]++;
+        } else {
+          contagem[palavra] = 1;
+        }
+      }
+
+      console.log(contagem);
+    }
+  </script>
+</body>
+</html>

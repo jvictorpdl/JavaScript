@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dados do Usuário</title>
+</head>
+<body>
+  <h1>Dados do Usuário</h1>
+  <label for="nome">Nome:</label>
+  <input type="text" id="nome">
+  <label for="idade">Idade:</label>
+  <input type="number" id="idade">
+  <label for="cidade">Cidade:</label>
+  <input type="text" id="cidade">
+  <button onclick="criarObjeto()">Criar Objeto</button>
+
+  <script>
+    function criarObjeto() {
+      var nome = document.getElementById('nome').value;
+      var idade = parseInt(document.getElementById('idade').value);
+      var cidade = document.getElementById('cidade').value;
+
+      var usuario = {
+        nome: nome,
+        idade: idade,
+        cidade: cidade
+      };
+
+      console.log(usuario);
+    }
+  </script>
+</body>
+</html>

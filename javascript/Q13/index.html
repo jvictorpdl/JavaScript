@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ordenar Nomes</title>
+</head>
+<body>
+  <h1>Ordenar Nomes</h1>
+  <label for="nomes">Digite uma lista de nomes separados por vírgula:</label>
+  <input type="text" id="nomes">
+  <button onclick="ordenarNomes()">Ordenar</button>
+
+  <script>
+    function ordenarNomes() {
+      let nomes = document.getElementById('nomes').value.split(',');
+      nomes = nomes.map(function(nome) {
+        return nome.trim();
+      });
+      nomes.sort();
+
+      console.log(nomes);
+    }
+  </script>
+</body>
+</html>

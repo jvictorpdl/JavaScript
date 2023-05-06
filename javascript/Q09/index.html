@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ordenar Números</title>
+</head>
+<body>
+  <h1>Ordenar Números</h1>
+  <label for="numeros">Digite uma lista de números separados por vírgula:</label>
+  <input type="text" id="numeros">
+  <button onclick="ordenarNumeros()">Ordenar</button>
+
+  <script>
+    function ordenarNumeros() {
+      var numeros = document.getElementById('numeros').value.split(',');
+      numeros = numeros.map(function(numero) {
+        return parseInt(numero);
+      });
+      numeros.sort(function(a, b) {
+        return a - b;
+      });
+
+      console.log(numeros);
+    }
+  </script>
+</body>
+</html>

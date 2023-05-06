@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dados Pessoais</title>
+</head>
+<body>
+  <h1>Dados Pessoais</h1>
+  <label for="nome">Nome:</label>
+  <input type="text" id="nome"><br>
+  <label for="idade">Idade:</label>
+  <input type="text" id="idade"><br>
+  <label for="celular">Número de Celular:</label>
+  <input type="text" id="celular"><br>
+  <label for="cidade">Cidade:</label>
+  <input type="text" id="cidade"><br>
+  <button onclick="criarObjeto()">Criar Objeto</button>
+  <button onclick="alterarInformacoes()">Alterar Informações</button>
+
+  <script>
+    let pessoa = {};
+
+    function criarObjeto() {
+      let nome = document.getElementById('nome').value;
+      let idade = document.getElementById('idade').value;
+      let celular = document.getElementById('celular').value;
+      let cidade = document.getElementById('cidade').value;
+
+      pessoa = {
+        nome: nome,
+        idade: idade,
+        celular: celular,
+        cidade: cidade
+      };
+
+      console.log("Objeto antes das alterações:");
+      console.log(pessoa);
+    }
+
+    function alterarInformacoes() {
+      let confirmacao = confirm("Deseja alterar as informações?");
+
+      if (confirmacao) {
+        let nome = prompt("Digite o novo nome:", pessoa.nome);
+        let idade = prompt("Digite a nova idade:", pessoa.idade);
+        let celular = prompt("Digite o novo número de celular:", pessoa.celular);
+        let cidade = prompt("Digite a nova cidade:", pessoa.cidade);
+
+        pessoa.nome = nome;
+        pessoa.idade = idade;
+        pessoa.celular = celular;
+        pessoa.cidade = cidade;
+      }
+
+      console.log("Objeto após as alterações:");
+      console.log(pessoa);
+    }
+  </script>
+</body>
+</html>

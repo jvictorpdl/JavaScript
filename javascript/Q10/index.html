@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Impressão de Números</title>
+</head>
+<body>
+  <h1>Impressão de Números</h1>
+  <label for="numero">Digite um número inteiro:</label>
+  <input type="number" id="numero">
+  <button onclick="imprimirNumeros()">Imprimir</button>
+
+  <script>
+    function imprimirNumeros() {
+      let numero = parseInt(document.getElementById('numero').value);
+
+      for (let i = 1; i <= numero; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log('XXXZZZZZ');
+        } else if (i % 3 === 0) {
+          console.log('ZZZ');
+        } else if (i % 5 === 0) {
+          console.log('XXXXX');
+        } else {
+          console.log(i);
+        }
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Segundo Maior Número</title>
+</head>
+<body>
+  <h1>Segundo Maior Número</h1>
+  <label for="numeros">Digite uma lista de números separados por vírgula:</label>
+  <input type="text" id="numeros">
+  <button onclick="encontrarSegundoMaior()">Encontrar Segundo Maior</button>
+
+  <script>
+    function encontrarSegundoMaior() {
+      let numeros = document.getElementById('numeros').value.split(',');
+      numeros = numeros.map(function(numero) {
+        return parseInt(numero);
+      });
+      numeros.sort(function(a, b) {
+        return b - a;
+      });
+
+      let segundoMaior = numeros[1];
+
+      console.log(segundoMaior);
+    }
+  </script>
+</body>
+</html>

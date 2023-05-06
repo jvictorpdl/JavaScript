@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Números Primos</title>
+</head>
+<body>
+  <h1>Números Primos</h1>
+  <label for="numero">Digite um número:</label>
+  <input type="number" id="numero">
+  <button onclick="imprimirPrimos()">Imprimir Primos</button>
+
+  <script>
+    function imprimirPrimos() {
+      var numero = parseInt(document.getElementById('numero').value);
+      var primos = [];
+
+      for (var i = 2; i <= numero; i++) {
+        if (primo(i)) {
+          primos.push(i);
+        }
+      }
+
+      console.log(primos);
+    }
+
+    function primo(numero) {
+      for (var i = 2; i < numero; i++) {
+        if (numero % i === 0) {
+          return false;
+        }
+      }
+      return numero > 1;
+    }
+  </script>
+</body>
+</html>
